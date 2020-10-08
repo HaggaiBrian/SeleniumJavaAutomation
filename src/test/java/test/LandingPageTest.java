@@ -1,5 +1,6 @@
 package test;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -41,10 +42,10 @@ public class LandingPageTest {
     @Before
     public void setUp() throws Exception {
             //Locate the Driver of Choice, Mozilla Firefox, IE, Opera, Edge etc
-            System.setProperty("webdriver.chromedriver.driver", chromePath);
+        WebDriverManager.chromedriver().setup();
         /* Since I am using a Maven Project, I can instead use a webdriver manager to go ahead and locatea browser driver
         of choice just like the comment line below
-        WebDriverManager.chromedriver().setup();*/
+        System.setProperty("webdriver.chromedriver.driver", chromePath);*/
 
             //Launch the Browser of Choice
             driver = new ChromeDriver();
@@ -149,6 +150,7 @@ public class LandingPageTest {
             RequestsQuotePageObjects.checkbox_emailme(driver).click();
             RequestsQuotePageObjects.checkbox_emailme(driver).isSelected();
             RequestsQuotePageObjects.button_getquote(driver).click();
+            Thread.sleep(10000);
 
             //Check and Verify that the right text is shown in this screen after a successful quote send
             String thanks = RequestsQuotePageObjects.text_thanks(driver).getText();
