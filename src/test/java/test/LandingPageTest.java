@@ -25,11 +25,11 @@ public class LandingPageTest {
         String chromePath = "/home/haggaibrian/Ergeon-Workspace/getquote-ergeon/src/test/java/drivers/chromedriver";
         String firefoxPath = "/home/haggaibrian/Ergeon-Workspace/getquote-ergeon/src/test/java/drivers/geckodriver";
 
-        //****Landing Page****
+        //****Landing Page Test Data****
         String expectedLandingPageTitle = "Fence and Driveway Contractors";
         String addressLandingPage = "1 Apple Park Way, Cupertino, CA 95014, USA";
 
-        //****Request Quote Page****
+        //****Request Quote Page Test Data****
         String expectedRequestQuotePageTitle = "Fence and Driveway Contractors";
         String expectedRequestQuotePageUrl = "https://dev.ergeon.com/request-quote";
         String yourName = "Ergeon QA";
@@ -41,23 +41,18 @@ public class LandingPageTest {
 
     @Before
     public void setUp() throws Exception {
-            //Locate the Driver of Choice, Mozilla Firefox, IE, Opera, Edge etc
         WebDriverManager.chromedriver().setup();
         /* Since I am using a Maven Project, I can instead use a webdriver manager to go ahead and locatea browser driver
         of choice just like the comment line below
         System.setProperty("webdriver.chromedriver.driver", chromePath);*/
-
-            //Launch the Browser of Choice
-            driver = new ChromeDriver();
-
-            //Navigate to url of choice
-            driver.navigate().to(baseUrl);
+        driver = new ChromeDriver();
+        driver.navigate().to(baseUrl);
         /* I use .navigate().to(). but some people can also use the .get() method. The difference is with the latter, a
         a user is able to access browser page history and navigate through the different pages
         driver.get(baseUrl);*/
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-            driver.manage().window().maximize();
-            Thread.sleep(10000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().window().maximize();
+        Thread.sleep(10000);
         }
 
         @Test
