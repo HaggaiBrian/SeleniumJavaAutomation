@@ -52,7 +52,7 @@ public class LandingPageTest {
         driver.get(baseUrl);*/
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
-        Thread.sleep(10000);
+        Thread.sleep(7000);
         }
 
         @Test
@@ -68,7 +68,7 @@ public class LandingPageTest {
             //Find Address Text Box and Enter A valid Address
             LandingPageObjects.textbox_address(driver).clear();
             LandingPageObjects.textbox_address(driver).sendKeys(addressLandingPage);
-            Thread.sleep(5000);
+            Thread.sleep(4000);
             LandingPageObjects.textbox_address(driver).sendKeys(Keys.ARROW_DOWN);
             LandingPageObjects.textbox_address(driver).sendKeys(Keys.RETURN);
 
@@ -106,14 +106,14 @@ public class LandingPageTest {
 
             //Click the Design your fence or Gate
             RequestsQuotePageObjects.button_design(driver).click();
-            sleep(5000);
+            sleep(4000);
 
             //Click through all the buttons to check functionality
             DesignFenceGatePageObjects.button_frontside(driver).click();
             DesignFenceGatePageObjects.button_backside(driver).click();
             DesignFenceGatePageObjects.button_gateoptions(driver).click();
             DesignFenceGatePageObjects.button_fenceoptions(driver).click();
-            sleep(10000);
+            sleep(5000);
             DesignFenceGatePageObjects.button_3dmodel(driver).click();
 
             //Designing the Fence
@@ -145,7 +145,7 @@ public class LandingPageTest {
             RequestsQuotePageObjects.checkbox_emailme(driver).click();
             RequestsQuotePageObjects.checkbox_emailme(driver).isSelected();
             RequestsQuotePageObjects.button_getquote(driver).click();
-            Thread.sleep(10000);
+            Thread.sleep(5000);
 
             //Check and Verify that the right text is shown in this screen after a successful quote send
             String thanks = RequestsQuotePageObjects.text_thanks(driver).getText();
