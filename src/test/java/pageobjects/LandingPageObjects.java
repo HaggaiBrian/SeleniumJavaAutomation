@@ -1,20 +1,37 @@
 package pageobjects;
 
-import org.openqa.selenium.By;
+import helper.ModelHelper;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 
-@SuppressWarnings("ALL")
-public class LandingPageObjects {
-
-    static WebElement element;
-
-    public static WebElement textbox_address(WebDriver driver){
-        element = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[3]/div/div[1]/div/div[1]/div[1]/div/div/div/div/div/input"));
-        return element;
+public class LandingPageObjects{
+    WebDriver driver;
+    public LandingPageObjects(WebDriver driver){
+        this.driver = driver;
     }
-    public static WebElement button_getquote(WebDriver driver){
-        element = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[3]/div/div[1]/div/div[1]/div[1]/div/div/div/div/div/button"));
-        return element;
+
+    @FindBy(how = How.XPATH,using = "//input[contains(@name, 'textinput')]")
+    WebElement address;
+    @FindBy(how = How.XPATH, using = "//*[name()='svg']")
+    WebElement maximizechat;
+
+    public void typeAddress(String Address) {
+        address.sendKeys(Address);
     }
+
+    public void pressKeys(){
+        address.sendKeys(Keys.ARROW_DOWN, Keys.RETURN);
+    }
+
+    public void clearAddress() {
+        address.clear();
+    }
+
+    public void maximizechat() {
+        ModelHelper.waitForElementToBeVisible(driver, maximizechat, 10);
+    }
+
 }
