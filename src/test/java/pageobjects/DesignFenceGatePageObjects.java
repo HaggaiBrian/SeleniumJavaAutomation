@@ -10,15 +10,15 @@ import org.openqa.selenium.support.PageFactory;
 public class DesignFenceGatePageObjects {
     WebDriver driver;
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/div/div[2]/div/div[2]/div[2]/div/div[1]/div/div[2]/div/div[2]/div[2]/div/div[2]/button[1]")
+    @FindBy(how = How.XPATH, using = "//button[text() = 'Fence Type']")
     WebElement button_fencetype;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/div/div[2]/div/div[2]/div[2]/div/div[1]/div/div[2]/div/div[2]/div[2]/div/div[2]/button[2]")
+    @FindBy(how = How.XPATH, using = "//button[text() = 'Height']")
     WebElement button_height;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/div/div[2]/div/div[2]/div[2]/div/div[1]/div/div[2]/div/div[2]/div[2]/div/div[2]/button[3]")
+    @FindBy(how = How.XPATH, using = "//button[text() = 'Picket Build']")
     WebElement button_picketbuild;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/div/div[2]/div/div[2]/div[2]/div/div[1]/div/div[2]/div/div[2]/div[2]/div/div[2]/button[4]")
+    @FindBy(how = How.XPATH, using = "//button[text() = 'Lattice Style']")
     WebElement button_latticestyle;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/div/div[2]/div/div[2]/div[2]/div/div[1]/div/div[2]/div/div[2]/div[2]/div/div[4]/div[2]/div[2]/button")
+    @FindBy(how = How.XPATH, using = "//button[text() = 'Add to order']")
     WebElement button_addorder;
 
     public void clickFenceType() {

@@ -8,4 +8,8 @@ public class SigninPageTest extends BaseTest {
     public void signin() {
 
     }
+    @Test(priority = 2)
+    public void signinNotrequestedaquote() {
+
+    }
 }
