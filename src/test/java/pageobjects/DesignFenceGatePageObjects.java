@@ -3,6 +3,7 @@ package pageobjects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
@@ -11,6 +12,7 @@ public class DesignFenceGatePageObjects {
     WebDriver driver;
 
     @FindBy(how = How.XPATH, using = "//button[text() = 'Fence Type']")
+            @CacheLookup
     WebElement button_fencetype;
     @FindBy(how = How.XPATH, using = "//button[text() = 'Height']")
     WebElement button_height;
@@ -19,6 +21,7 @@ public class DesignFenceGatePageObjects {
     @FindBy(how = How.XPATH, using = "//button[text() = 'Lattice Style']")
     WebElement button_latticestyle;
     @FindBy(how = How.XPATH, using = "//button[text() = 'Add to order']")
+            @CacheLookup
     WebElement button_addorder;
 
     public void clickFenceType() {
