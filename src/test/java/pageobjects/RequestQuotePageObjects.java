@@ -10,9 +10,9 @@ import org.testng.Assert;
 public class RequestQuotePageObjects {
         WebDriver driver;
 
-        @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/div/div[2]/div/div[1]/div[2]/div[1]/form/div[1]/div/ul/li[1]/label/div[1]")
+        @FindBy(how = How.XPATH, using = "//input[@value = 'Fences & Gates']")
         WebElement fence_gates;
-        @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/div/div[2]/div/div[1]/div[2]/div[1]/form/div[1]/div/ul/li[2]/label/div[1]")
+        @FindBy(how = How.XPATH, using = "//input[@value = 'Driveways & Patios']")
         WebElement driveways_patios;
         @FindBy(id =  "name")
         WebElement name;
@@ -26,13 +26,13 @@ public class RequestQuotePageObjects {
         WebElement addnotecomment;
         @FindBy(linkText = "Design your Fence or Gate")
         WebElement designyoufence;
-        @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/div/div[2]/div/div[1]/div[2]/div[1]/form/div[7]/button")
+        @FindBy(how = How.XPATH, using = "//input[@value = 'Get a quote']")
         WebElement getquote;
-        @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/div/div[2]/div/div/h4")
+        @FindBy(how = How.XPATH, using = "//input[@value = 'Thanks!']")
         WebElement thanks;
-        @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/div/div[2]/div/div/p")
+        @FindBy(how = How.XPATH, using = "//input[@value = 'We will call you within 24 hours']")
         WebElement callyou;
-        @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/div/div[2]/div/div[3]/div/div[3]/a")
+        @FindBy(how = How.XPATH, using = "//input[@value = 'Add a config']")
         WebElement addconfig;
 
         public void clickFencesGates() {

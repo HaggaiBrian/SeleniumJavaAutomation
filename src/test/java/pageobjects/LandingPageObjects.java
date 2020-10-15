@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
+import static java.lang.Thread.sleep;
+
 public class LandingPageObjects{
     WebDriver driver;
     public LandingPageObjects(WebDriver driver){
@@ -15,23 +17,19 @@ public class LandingPageObjects{
 
     @FindBy(how = How.XPATH,using = "//input[contains(@name, 'textinput')]")
     WebElement address;
-    @FindBy(how = How.XPATH, using = "//*[name()='svg']")
-    WebElement maximizechat;
 
-    public void typeAddress(String Address) {
+    public void typeAddress(String Address) throws InterruptedException {
         address.sendKeys(Address);
+        sleep(5000);
     }
 
     public void pressKeys(){
         address.sendKeys(Keys.ARROW_DOWN, Keys.RETURN);
     }
 
-    public void clearAddress() {
+    public void clearAddress() throws InterruptedException {
         address.clear();
-    }
-
-    public void maximizechat() {
-        ModelHelper.waitForElementToBeVisible(driver, maximizechat, 10);
+        sleep(20000);
     }
 
 }
