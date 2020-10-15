@@ -22,32 +22,27 @@ public class LandingPageTest extends BaseTest{
         landingPage.pressKeys();
         RequestQuotePageObjects requestPage = PageFactory.initElements(driver, RequestQuotePageObjects.class);
         wait = new WebDriverWait(driver, 2);
-//        requestPage.clickFencesGates();
-//        requestPage.selectedFencesGates();
-//        requestPage.clearName();
-//        requestPage.typeName("Ergeon QA");
-//        requestPage.clearPhone();
-//        requestPage.typePhone("5555555555");
-//        requestPage.clearEmail();
-//        requestPage.typeEmail("ergeonqaautomation@gmail.com");
-//        requestPage.displayedAddNote();
-//        requestPage.clickAddnote();
-//        requestPage.clearAddnoteComment();
-//        requestPage.typeAddnoteComment("I love the work that is done by Ergeon, contactless construction");
-//        requestPage.displayedDesignFencesGates();
-//        requestPage.clickDesignFenceGates();
-//        DesignFenceGatePageObjects designPage = PageFactory.initElements(driver, DesignFenceGatePageObjects.class);
-//        designPage.clickFenceType();
-//        designPage.clickHeight();
-//        designPage.clickPicketBuild();
-//        designPage.clickLatticeStyle();
-//        designPage.clickAddorder();
-//        requestPage.displayedconfig();
-//        ((JavascriptExecutor) driver)
-//                .executeScript("window.scrollTo(0, document.body.scrollHeight)");
-//        requestPage.clickGetQuote();
-//        requestPage.thanks();
-//        requestPage.callyou();
+        requestPage.clearName();
+        requestPage.typeName("Ergeon QA");
+        requestPage.clearPhone();
+        requestPage.typePhone("5555555555");
+        requestPage.clearEmail();
+        requestPage.typeEmail("ergeonqaautomation@gmail.com");
+        requestPage.displayedAddNote();
+        requestPage.clickAddnote();
+        requestPage.clearAddnoteComment();
+        requestPage.typeAddnoteComment("I love the work that is done by Ergeon, contactless construction");
+        requestPage.displayedDesignFencesGates();
+        requestPage.clickDesignFenceGates();
+        DesignFenceGatePageObjects designPage = PageFactory.initElements(driver, DesignFenceGatePageObjects.class);
+        designPage.clickFenceType();
+        designPage.clickHeight();
+        designPage.clickPicketBuild();
+        designPage.clickLatticeStyle();
+        designPage.clickAddorder();
+        requestPage.clickGetQuote();
+        requestPage.thanks();
+        requestPage.callyou();
 
     }
 

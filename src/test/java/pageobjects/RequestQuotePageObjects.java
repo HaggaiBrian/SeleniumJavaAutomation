@@ -2,6 +2,7 @@ package pageobjects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
@@ -10,9 +11,9 @@ import org.testng.Assert;
 public class RequestQuotePageObjects {
         WebDriver driver;
 
-        @FindBy(how = How.XPATH, using = "//input[@value = 'Fences & Gates']")
+        @FindBy(how = How.XPATH, using = "//button[contains(text() = 'Fences & Gates']")
         WebElement fence_gates;
-        @FindBy(how = How.XPATH, using = "//input[@value = 'Driveways & Patios']")
+        @FindBy(how = How.XPATH, using = "//button[contains(text() = 'Driveways & Patios']")
         WebElement driveways_patios;
         @FindBy(id =  "name")
         WebElement name;
@@ -26,14 +27,13 @@ public class RequestQuotePageObjects {
         WebElement addnotecomment;
         @FindBy(linkText = "Design your Fence or Gate")
         WebElement designyoufence;
-        @FindBy(how = How.XPATH, using = "//input[@value = 'Get a quote']")
+        @FindBy(how = How.XPATH, using = "//button[text() = 'Get a quote']")
+                @CacheLookup
         WebElement getquote;
-        @FindBy(how = How.XPATH, using = "//input[@value = 'Thanks!']")
+        @FindBy(how = How.XPATH, using = "//*[text() = 'Thanks!']")
         WebElement thanks;
-        @FindBy(how = How.XPATH, using = "//input[@value = 'We will call you within 24 hours']")
+        @FindBy(how = How.XPATH, using = "//*[text() = 'We will call you within 24 hours']")
         WebElement callyou;
-        @FindBy(how = How.XPATH, using = "//input[@value = 'Add a config']")
-        WebElement addconfig;
 
         public void clickFencesGates() {
             fence_gates.click();
@@ -93,9 +93,6 @@ public class RequestQuotePageObjects {
                 Assert.assertEquals(callyoumessage, "We will call you within 24 hours");
         }
 
-        public void displayedconfig() {
-                addconfig.isDisplayed();
-        }
 
         public RequestQuotePageObjects(WebDriver driver){
             this.driver = driver;
