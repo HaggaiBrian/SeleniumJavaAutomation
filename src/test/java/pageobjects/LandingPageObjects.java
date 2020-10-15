@@ -20,7 +20,7 @@ public class LandingPageObjects{
 
     public void typeAddress(String Address) throws InterruptedException {
         address.sendKeys(Address);
-        sleep(5000);
+        sleep(3000);
     }
 
     public void pressKeys(){
@@ -29,7 +29,7 @@ public class LandingPageObjects{
 
     public void clearAddress() throws InterruptedException {
         address.clear();
-        sleep(20000);
+        sleep(12000);
     }
 
 }

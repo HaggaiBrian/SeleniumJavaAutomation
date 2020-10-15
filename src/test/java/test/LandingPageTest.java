@@ -15,10 +15,10 @@ public class LandingPageTest extends BaseTest{
     @Test(priority = 1)
     public void getquote() throws InterruptedException {
         LandingPageObjects landingPage = PageFactory.initElements(driver, LandingPageObjects.class);
-        wait = new WebDriverWait(driver, 20);
+        wait = new WebDriverWait(driver, 12);
         landingPage.clearAddress();
         landingPage.typeAddress("1 Apple Park Way, Cupertino, CA 95014, USA");
-        wait = new WebDriverWait(driver, 5);
+        wait = new WebDriverWait(driver, 2);
         landingPage.pressKeys();
         RequestQuotePageObjects requestPage = PageFactory.initElements(driver, RequestQuotePageObjects.class);
         wait = new WebDriverWait(driver, 2);
